@@ -94,10 +94,10 @@ nav ul li a.active {
 .kategori button {
   background: transparent;
   border: 2px solid #FF799C;
-  padding: 8px 18px;
+  padding: 10px 18px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   color: #FF799C;
   transition: 0.3s ease;
 }
@@ -144,6 +144,7 @@ nav ul li a.active {
 .item-section h1{
   /* margin: 50px; */
   margin-top: 50px;
+  font-size: 45px;
 }
 
 .item-section ul li {
