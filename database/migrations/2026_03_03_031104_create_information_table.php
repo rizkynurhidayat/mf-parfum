@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->id();
+            $table->string('phone');
+            $table->string('tiktok');
+            $table->string('twitter');
+            $table->string('instagram');
+            $table->string('location');
             $table->timestamps();
         });
     }
