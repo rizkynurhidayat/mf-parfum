@@ -14,7 +14,7 @@
 <body>
     <!-- navbar -->
     <nav>
-        <img class="img-nav" src="gambar/logo.jpeg" width="30px" height="30px" alt="">
+        <img class="img-nav" src="images/logo.jpeg" width="30px" height="30px" alt="">
         <ul class="ul-nav">
             <li>
                 <a href="#Beranda">Beranda</a>
@@ -74,9 +74,9 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><img src="gambar/foto.jpeg" alt=""></div>
-        <div class="swiper-slide"><img src="gambar/fotoo1.jpeg" alt=""></div>
-        <div class="swiper-slide"><img src="gambar/fotoo.png" alt=""></div>
+        <div class="swiper-slide"><img src="images/foto.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="images/fotoo1.jpeg" alt=""></div>
+        <div class="swiper-slide"><img src="images/fotoo.png" alt=""></div>
     ...
     </div>
     <!-- If we need pagination -->
@@ -111,7 +111,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/farish parfum.png"></div>
+                    <div><img class="product-img" src="images/farish parfum.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -132,7 +132,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/rose parfume.png"></div>
+                    <div><img class="product-img" src="images/rose parfume.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -153,7 +153,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/na slavina parfum.png"></div>
+                    <div><img class="product-img" src="images/na slavina parfum.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -174,7 +174,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/skanda parfum.png"></div>
+                    <div><img class="product-img" src="images/skanda parfum.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -195,7 +195,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/syakura parfum.png"></div>
+                    <div><img class="product-img" src="images/syakura parfum.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -216,7 +216,7 @@
                         <p>75 ml</p>
                         <!-- <button class="info-button">i</button> -->
                     </div>
-                    <div><img class="product-img" src="gambar/blossom parfum.png"></div>
+                    <div><img class="product-img" src="images/blossom parfum.png"></div>
                     <div class="box-bawah">
                         <h2>IDR 50.000</h2>
                         <button
@@ -250,9 +250,9 @@
 <section class="mini-swiper-section">
   <div class="swiper mini-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="gambar/foto.jpeg"></div>
-      <div class="swiper-slide"><img src="gambar/fotoo.png"></div>
-      <div class="swiper-slide"><img src="gambar/fotooo.jpeg"></div>
+      <div class="swiper-slide"><img src="images/foto.jpeg"></div>
+      <div class="swiper-slide"><img src="images/fotoo.png"></div>
+      <div class="swiper-slide"><img src="images/fotooo.jpeg"></div>
     </div>
   </div>
 </section>
@@ -302,19 +302,19 @@
           <h3>Ikuti Kami</h3>
           <div class="aplikasi">
             <a href="https://instagram.com">
-                <img src="gambar/instagram.png" alt="">
+                <img src="images/instagram.png" alt="">
             </a>
             <a href="https://tiktok.com/">
-                <img src="gambar/tik-tok.png" alt="">
+                <img src="images/tik-tok.png" alt="">
             </a>
             <a href="https://snapchat.com/">
-                <img src="gambar/twitter.png" alt="">
+                <img src="images/twitter.png" alt="">
             </a>
             <a href="https://facebook.com/">
-                <img src="gambar/facebook.png" alt="">
+                <img src="images/facebook.png" alt="">
             </a>
             <a href="https://facebook.com/">
-                <img src="gambar/snapchat.png" alt="">
+                <img src="images/snapchat.png" alt="">
             </a>
           </div>
         </div>
@@ -324,7 +324,7 @@
 
     <!-- LOGO -->
     <a href="#top" class="logo-mf-footer">
-      <img src="gambar/logo.jpeg" alt="logo" class="img-logof">
+      <img src="images/logo.jpeg" alt="logo" class="img-logof">
     </a>
 
     <!-- MENU BAWAH -->
@@ -347,7 +347,7 @@
     <!-- <img src="cs1.png" alt="Customer Service"> -->
         <!-- <i class="fa-chisel fa-regular fa-comment"></i> -->
         <!-- <i class="fa-etch fa-solid fa-comment"></i> -->
-    <img src="gambar/chat5.png" alt="Customer Service">
+    <img src="images/chat5.png" alt="Customer Service">
         
     </a>
 
