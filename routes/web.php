@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 
 
@@ -9,9 +10,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('admin');
+Route::middleware(['guest'])->group(function () {
+    // route login
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
 });
 
-
+Route::middleware(['auth'])->group(function () {
+    // route admin dasboard
+    Route::get('/admin', [AdminController::class, 'view'])->name('admin');
+});
 
