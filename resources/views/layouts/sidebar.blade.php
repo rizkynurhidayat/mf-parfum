@@ -69,16 +69,16 @@
           <ul class="menu-inner py-1">
           <!-- edit dasboard sama users tgl 12 -->
             <!-- Dashboard -->
-            <li class="menu-item {{ request()->routeIs('admin') ? 'active' : '' }}">
-              <a href="{{ route ('admin')}}" class="menu-link">
+            <li>
+              <a >
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
 
             <!-- Users -->
-            <li class="menu-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
-              <a href="{{ route ('users.index')}}" class="menu-link">
+            <li>
+              <a >
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-user me-2"></i>
                 <div data-i18n="Analytics">User Data</div>
@@ -88,57 +88,7 @@
               <span class="menu-header-text">Pages</span>
             </li>
 
-             <!-- hero -->
-            <li class="menu-item {{ request()->routeIs('hero.*') ? 'active' : '' }}">
-              <a href="{{ route ('hero.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Analytics">Hero</div>
-              </a>
-            </li>
-
-
-            <!-- Portofolio -->
-            <li class="menu-item {{ request()->routeIs('portofolio.*') ? 'active' : '' }}">
-              <a href="{{ route ('portofolio.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Portofolio</div>
-              </a>
-            </li>
-
-            <!-- service -->
-            <li class="menu-item {{ request()->routeIs('service.*') ? 'active' : '' }}">
-              <a href="{{ route ('service.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-cog"></i>
-                <div data-i18n="Analytics">Service</div>
-              </a>
-            </li>
-
-            <!-- team -->
-            <li class="menu-item {{ request()->routeIs('team.*') ? 'active' : '' }}">
-              <a href="{{ route ('team.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Analytics">Teams</div>
-              </a>
-            </li>
-            <!-- message -->
-            <li class="menu-item {{ request()->routeIs('message.*') ? 'active' : '' }}">
-              <a href="{{ route ('message.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-message"></i>
-                <div data-i18n="Analytics">Message Data 
-                  
-                 @if ($count > 0)
-                    <span class="badge badge-center rounded-pill bg-label-danger">{{ $count }}</span>
-                @endif 
-                </div>
-              </a>
-            </li>
-            
-
+      
 
           </ul>
         </aside>

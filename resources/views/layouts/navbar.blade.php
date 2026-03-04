@@ -53,7 +53,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">{{ $username }}</span>
+                            
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -88,7 +88,7 @@
                     </li>
                     <li>
                       <!-- tambahin dan ganti jadi ini, untuk logoutnya -->
-                      <form method="POST" action="{{ route('logout')}}">
+                      
                         @csrf
                         <button type="submit" class="dropdown-item">
                           <i class="bx bx-power-off me-2"></i>
