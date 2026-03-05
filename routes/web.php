@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('index');
@@ -44,5 +45,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/Gallery/edit/{gallery}', [GalleryController::class, 'edit'])->name('gallery.edit');
     Route::put('/Gallery/edit/{gallery}', [GalleryController::class, 'update'])->name('gallery.update');
     Route::delete('/Gallery/{gallery}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    
+    // route product
+    Route::get('/Product', [ProductController::class, 'view'])->name('product.index');
+    Route::get('/Product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/Product/create', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/Product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/Product/edit/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/Product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
 });
