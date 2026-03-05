@@ -3,12 +3,26 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+<<<<<<< HEAD
 use App\Http\Controllers\HeroController;
 
 Route::middleware(['guest'])->group(function () {
     // route login
     Route::get('/Login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/Login', [AuthController::class, 'login']);
+=======
+
+Route::get('/', function () {
+    return view('index');
+});
+
+
+Route::middleware(['guest'])->group(function () {
+    // route login
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+
+>>>>>>> ad702ceca3af2aadccdfa04aad716fb1a0e63181
     
 });
 
