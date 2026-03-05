@@ -71,23 +71,17 @@
 <!-- Slider main container -->
 <section id="Beranda">
     <div class="swiper">
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide"><img src="images/foto.jpeg" alt=""></div>
-        <div class="swiper-slide"><img src="images/fotoo1.jpeg" alt=""></div>
-        <div class="swiper-slide"><img src="images/fotoo.png" alt=""></div>
-    ...
+        @foreach($heros as $hero)
+            <div class="swiper-slide">
+                <img src="{{ asset($hero->image) }}" alt="Hero Banner">
+            </div>
+        @endforeach
     </div>
-    <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <!-- <div class="swiper-scrollbar"></div> -->
     </div> 
 </section>
 <!-- hero section end -->

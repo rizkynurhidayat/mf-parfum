@@ -15,5 +15,15 @@ class AdminController extends Controller
         return view('admin', ["username" => $user['name']]);
     }
 
+    public function users(){
+        $user = Auth::user();
+        $users = User::all();
+        return view('users.index', [
+            "name" => $user['name'],
+            "users" => $users
+        ]);
+    }
+
+
 
 }

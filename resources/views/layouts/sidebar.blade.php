@@ -69,26 +69,32 @@
           <ul class="menu-inner py-1">
           <!-- edit dasboard sama users tgl 12 -->
             <!-- Dashboard -->
-            <li>
-              <a >
+            <li class="menu-item {{ request()->routeIs('admin') ? 'active' : '' }}">
+              <a href="{{ route ('admin') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
 
             <!-- Users -->
-            <li>
-              <a >
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
+            <li class="menu-item {{ request()->routeIs('users.*') ? 'active' : '' }}">
+              <a href="{{ route ('users.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user me-2"></i>
-                <div data-i18n="Analytics">User Data</div>
+                <div data-i18n="Analytics">Users</div>
               </a>
             </li>
+
              <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
 
-      
+            {{-- Hero --}}
+            <li class="menu-item {{ request()->routeIs('hero.*') ? 'active' : '' }}">
+              <a href="{{ route ('hero.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Analytics">Hero</div>
+              </a>
+            </li>
 
           </ul>
         </aside>
