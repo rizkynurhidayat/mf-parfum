@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\InfoController;
 
 Route::get('/', function () {
     return view('index');
@@ -30,10 +31,14 @@ Route::middleware(['auth'])->group(function () {
 
     // route hero
     Route::get('/Hero', [HeroController::class, 'view'])->name('hero.index');
-    Route::get('/Hero/create', [HeroController::class, 'create'])->name('hero.create');
-    Route::post('/Hero/create', [HeroController::class, 'store'])->name('hero.store');
-    Route::get('/Hero/edit/{hero}', [HeroController::class, 'edit'])->name('hero.edit');
-    Route::put('/Hero/edit/{hero}', [HeroController::class, 'update'])->name('hero.update');
+    Route::get('/Hero/Create', [HeroController::class, 'create'])->name('hero.create');
+    Route::post('/Hero/Create', [HeroController::class, 'store'])->name('hero.store');
+    Route::get('/Hero/Edit/{hero}', [HeroController::class, 'edit'])->name('hero.edit');
+    Route::put('/Hero/Edit/{hero}', [HeroController::class, 'update'])->name('hero.update');
     Route::delete('/Hero/{hero}', [HeroController::class, 'destroy'])->name('hero.destroy');
 
+    // route info
+    Route::get('/Information', [InfoController::class, 'view'])->name('information.index');
+    Route::get('/Information/Edit/{information}', [InfoController::class, 'edit'])->name('information.edit');
+    Route::put('/Information/Edit/{information}', [InfoController::class, 'update'])->name('information.update');
 });
