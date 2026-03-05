@@ -103,5 +103,15 @@
                 <div data-i18n="Analytics">Gallery</div>
               </a>
             </li>
+
+            {{-- Info --}}
+            <li class="menu-item {{ request()->routeIs('information.*') ? 'active' : '' }}">
+              <a href="{{ route ('information.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-message"></i>
+                <div data-i18n="Analytics">Information
+                </div>
+              </a>
+            </li>
+
           </ul>
         </aside>
