@@ -95,6 +95,13 @@
                 <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
-
+            
+            {{-- Gallery --}}
+            <li class="menu-item {{ request()->routeIs('gallery.*') ? 'active' : '' }}">
+              <a href="{{ route ('gallery.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div data-i18n="Analytics">Gallery</div>
+              </a>
+            </li>
           </ul>
         </aside>

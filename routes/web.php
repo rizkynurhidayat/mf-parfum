@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('index');
@@ -35,5 +36,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/Hero/edit/{hero}', [HeroController::class, 'edit'])->name('hero.edit');
     Route::put('/Hero/edit/{hero}', [HeroController::class, 'update'])->name('hero.update');
     Route::delete('/Hero/{hero}', [HeroController::class, 'destroy'])->name('hero.destroy');
+
+    // route galeri
+    Route::get('/Gallery', [GalleryController::class, 'view'])->name('gallery.index');
+    Route::get('/Gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('/Gallery/create', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::get('/Gallery/edit/{gallery}', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::put('/Gallery/edit/{gallery}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::delete('/Gallery/{gallery}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 
 });
