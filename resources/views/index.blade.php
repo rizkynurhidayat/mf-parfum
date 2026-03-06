@@ -71,17 +71,18 @@
 <!-- Slider main container -->
 <section id="Beranda">
     <div class="swiper">
-    <div class="swiper-wrapper">
-        @foreach($heros as $hero)
-            <div class="swiper-slide">
-                <img src="{{ asset($hero->image) }}" alt="Hero Banner">
-            </div>
-        @endforeach
-    </div>
-    <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+            @foreach($heros as $hero)
+                <div class="swiper-slide">
+                    <img src="{{ asset('storage/' . $hero->image) }}" alt="Hero Banner">
+                </div>
+            @endforeach
+        </div>
 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div> 
 </section>
 <!-- hero section end -->
@@ -346,5 +347,25 @@
     </a>
 
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+</body> </html>
 </body>
 </html>

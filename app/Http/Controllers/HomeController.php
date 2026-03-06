@@ -14,8 +14,8 @@ class HomeController extends Controller
         $informations = Information::all();
 
         return view('index', [
-            "hero" => $hero,
-            "information" => $information,
+            "heros" => $heros,
+            "information" => $informations,
         ]);
         
     }

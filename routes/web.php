@@ -4,19 +4,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\GalleryController;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::middleware(['guest'])->group(function () {
 
     // route login
     Route::get('/Login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/Login', [AuthController::class, 'login']);
+
+    // route landingpage
+    Route::get('/', [HomeController::class, 'view']);
 
 });
 
