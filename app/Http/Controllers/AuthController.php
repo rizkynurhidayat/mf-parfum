@@ -32,9 +32,9 @@ class AuthController extends Controller
         // Attempt to authenticate the user
         if (auth::attempt($validator)) {
             // setiap yang login dapet sesi baru terus, kita bisa atur sesi seberalamanya disini
-            // dia diarahkan ke halaman admin dengan pesan sukses
+            // dia diarahkan ke halaman admin dengan pesan sukses (awalnya /admin)
             $request->session()->regenerate();
-            return redirect()->intended('/admin')->with('success','Login Berhasil');
+            return redirect()->intended('/Admin')->with('success','Login Berhasil');
         }
 
         // ketika gagal login
@@ -50,8 +50,9 @@ class AuthController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
-        return redirect('/login');
+        
+        // awalnya /login
+        return redirect('/Login');
     }
 
 }

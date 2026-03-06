@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        @error('title')
+        @error('name')
         <p>{{$message}}</p>
         @enderror
         @error('description')
@@ -22,15 +22,15 @@
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
                       <h5 class="mb-0">Add Products Data</h5>
-                      <small class="text-muted float-end">Default label</small>
+                      <!-- <small class="text-muted float-end">Input Data</small> -->
                     </div>
                     <div class="card-body">
                       <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="title">Title</label>
+                          <label class="col-sm-2 col-form-label" for="name">Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Input Title" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Input Name" />
                           </div>
                         </div>
                         <div class="row mb-3">

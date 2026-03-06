@@ -32,8 +32,8 @@ class ProductController extends Controller
      public function store(Request $request){
         // validasi input
         $validator = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
             'image' => 'required|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
             'price' => 'required|numeric|min:0',
         ]);
@@ -62,8 +62,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product){
         // validasi input
         $validator = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'image' => 'nullable|image|max:2048|mimes:jpeg,png,jpg,gif,svg',
         ]);

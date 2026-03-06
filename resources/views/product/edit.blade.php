@@ -4,21 +4,16 @@
         @error('name')
         <p>{{$message}}</p>
         @enderror
-        @error('role')
+        @error('description')
         <p>{{$message}}</p>
         @enderror
         @error('image')
         <p>{{$message}}</p>
         @enderror
-        @error('twitter')
+        @error('price')
         <p>{{$message}}</p>
         @enderror
-        @error('facebook')
-        <p>{{$message}}</p>
-        @enderror
-        @error('linkedin')
-        <p>{{$message}}</p>
-        @enderror
+        
               
 
               <!-- Basic Layout & Basic with Icons -->
@@ -35,9 +30,9 @@
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="title">Title</label>
+                          <label class="col-sm-2 col-form-label" for="name">Name</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title" value="{{ $product->title }}" placeholder="Input Title" />
+                            <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" placeholder="Input Name" />
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -67,9 +62,9 @@
                         </div>
 
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="twitter">Price</label>
+                          <label class="col-sm-2 col-form-label" for="price">Price</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" placeholder="Input link Twitter" />
+                            <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" placeholder="Input link Price" />
                           </div>
                         </div>
                         

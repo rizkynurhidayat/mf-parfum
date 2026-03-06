@@ -17,14 +17,14 @@
               <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h5 class="card-header">Products Data</h5>
-                    <a class="btn btn-primary" href="{{ route('product.create') }}">Add Person </a>
+                    <a class="btn btn-primary" href="{{ route('product.create') }}">Add Product </a>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th>Title</th>
+                        
+                        <th>Name</th>
                         <th>Description</th>
                         <th>Image</th>
                         <th>Price</th>
@@ -34,7 +34,7 @@
                     <tbody class="table-border-bottom-0">
                         @foreach ($products as $product)
                         <tr>
-                          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong >{{ $product->title }}</strong></td>
+                          <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong >{{ $product->name }}</strong></td>
                           <td>{{ $product->description}}</td>
                           <!-- <td>
                             <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
@@ -80,6 +80,7 @@
                                             <!-- <a href="javascript:void(0)" class="btn btn-danger">Delete</a> -->
                                             </div>
                                         </div>
+
                                 
                                 </div>
 
