@@ -8,7 +8,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\HomeController;
 
 
 Route::middleware(['guest'])->group(function () {
