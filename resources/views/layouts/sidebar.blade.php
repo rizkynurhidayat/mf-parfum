@@ -104,6 +104,14 @@
               </a>
             </li>
 
+            {{-- Product --}}
+            <li class="menu-item {{ request()->routeIs('product.*') ? 'active' : '' }}">
+              <a href="{{ route ('product.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-package"></i>
+                <div data-i18n="Analytics">Product</div>
+              </a>
+            </li>
+
             {{-- Info --}}
             <li class="menu-item {{ request()->routeIs('information.*') ? 'active' : '' }}">
               <a href="{{ route ('information.index') }}" class="menu-link">
@@ -112,6 +120,5 @@
                 </div>
               </a>
             </li>
-
           </ul>
         </aside>

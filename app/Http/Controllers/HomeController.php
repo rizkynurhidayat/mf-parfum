@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Hero;
 use App\Models\Information;
@@ -15,7 +16,6 @@ class HomeController extends Controller
 
         return view('index', [
             "hero" => $hero,
-            "information" => $information,
         ]);
         
     }

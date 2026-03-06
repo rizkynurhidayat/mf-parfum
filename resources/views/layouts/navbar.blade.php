@@ -88,6 +88,8 @@
                     </li>
                     <li>
                       <!-- tambahin dan ganti jadi ini, untuk logoutnya -->
+
+              <!-- // logout-->
                       <form method="POST" action="{{ route('logout')}}">
                         @csrf
                         <button type="submit" class="dropdown-item">
@@ -95,7 +97,7 @@
                           <span class="align-middle">Log Out</span>
                         </button>
                       </form>
-                      </a>
+                      
                     </li>
                   </ul>
                 </li>
