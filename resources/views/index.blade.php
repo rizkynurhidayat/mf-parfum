@@ -9,6 +9,26 @@
 <link
   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset ('foody2')}}/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{ asset ('foody2')}}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset ('foody2')}}/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -88,152 +108,67 @@
 <!-- hero section end -->
 
 <!-- items -->
-<section id="Produk">
-    <div class="item-section">
-        <h1>Produk Kami</h1>
-
-        <div class="kategori">
-        <button data-kategori="terlaris">Terlaris</button>
-        <button data-kategori="termurah">Termurah</button>
-        <button data-kategori="terbaru">Terbaru</button>
-        </div>
-
-        <ul class="item-box">
-            <li>
-                <div class="box1 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/farish parfum.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
+  <!-- Product Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-0 gx-5 align-items-end">
+                <div class="col-lg-6">
+                    <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                        <h1 class="display-5 mb-3">Our Products</h1>
+                        <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="box2 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/rose parfume.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
+                <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Terbaru</a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Terlaris </a>
+                        </li>
+                        <li class="nav-item me-0">
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Termurah</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        @foreach($products as $product)
+                        <div class="col-xl-3 col-lg-4 col-md-6mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="product-item">
+                                <div class="position-relative bg-light overflow-hidden">
+                                    <img class="img-fluid w-100" src="{{ asset('storage/'.$product->image) }}" alt="">
+                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <a class="d-block h5 mb-2" href="">{{ $product->name }}</a>
+                                    <span class="text-primary me-1">Rp.{{ $product->price }}</span>
+                                    
+                                </div>
+                                <div class="d-flex border-top">
+                                    <small class="w-50 text-center border-end py-2">
+                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    </small>
+                                    <small class="w-50 text-center py-2">
+                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                
+                        <div class="col-12 text-center">
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
+                        </div>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="box3 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/na slavina parfum.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="box4 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/skanda parfum.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="box5 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/syakura parfum.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="box6 cembung">
-                    <div class="box-atas">
-                        <h2>Nama Produk</h2>
-                        <p>75 ml</p>
-                        <!-- <button class="info-button">i</button> -->
-                    </div>
-                    <div><img class="product-img" src="images/blossom parfum.png"></div>
-                    <div class="box-bawah">
-                        <h2>IDR 50.000</h2>
-                        <button
-                         class="buy-button"
-                         onclick="window.open('https://shopee.co.id', '_blank')"
-                        >
-                         BELI
-                        </button>
-                        
-                        <!-- <button class="buy-button">BELI</button> -->
-                        <!-- <a href="https://shopee.co.id" class="buy-button" target="_blank">BELI</a> -->
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="button-lihat">
-            <button class="button-box">Lihat Semua</button>
+            </div>
         </div>
     </div>
+    <!-- Product End -->
 
-</section>
-<!-- Item Section END -->
 
 <!-- tentang kami -->
     <section id="Tentang">
@@ -348,6 +283,16 @@
 
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+           <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset ('foody2')}}/lib/wow/wow.min.js"></script>
+    <script src="{{ asset ('foody2')}}/lib/easing/easing.min.js"></script>
+    <script src="{{ asset ('foody2')}}/lib/waypoints/waypoints.min.js"></script>
+    <script src="{{ asset ('foody2')}}/lib/owlcarousel/owl.carousel.min.js"></script>
+    </script>
 
     <script>
       const swiper = new Swiper('.swiper', {
@@ -366,6 +311,7 @@
         },
       });
     </script>
+
 </body> </html>
 </body>
 </html>
