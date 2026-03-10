@@ -207,6 +207,24 @@ nav ul li a.active {
     box-shadow: 0 4px 10px rgba(194, 24, 91, 0.3); 
 }
 
+/* Warna Dasar Tombol Lihat Lebih Banyak */
+.btn-primary.rounded-pill.py-3.px-5 {
+    background-color: #C2185B !important; /* Warna Pink Tua */
+    border-color: #C2185B !important;     /* Warna Garis Pinggir */
+    color: #ffffff !important;            /* Warna Teks Putih */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(194, 24, 91, 0.2);
+}
+
+/* Efek Saat Hover (Kursor Lewat) */
+.btn-primary.rounded-pill.py-3.px-5:hover {
+    background-color: #f875aa !important; /* Pink yang lebih terang saat hover */
+    border-color: #f875aa !important;
+    transform: translateY(-3px);          /* Efek sedikit melayang */
+    box-shadow: 0 6px 20px rgba(248, 117, 170, 0.4);
+}
+
 /* item end */
 
 
