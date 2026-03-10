@@ -50,6 +50,100 @@ nav ul li a.active {
 .search{
     cursor: pointer;
 }
+
+/* Container Utama (Latar belakang dibuat transparan/gelap tipis saja) */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Gelap tipis agar web asli masih terlihat */
+    backdrop-filter: blur(4px); /* Efek blur halus di belakang kotak putih */
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Muncul dari atas */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Kotak Putih (The Card) */
+.search-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    margin-top: -100px; /* Sembunyi di atas sebelum aktif */
+    padding: 30px 50px;
+    border-radius: 0 0 15px 15px; /* Lengkungan hanya di bawah */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: margin-top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.search-overlay.active .search-card {
+    margin-top: 0; /* Meluncur turun saat aktif */
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Serif', 'Playfair Display', serif; /* Font elegan */
+}
+
+.search-body h3 {
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.popular-list {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+
+.popular-list span {
+    color: #FBA1B7; /* Warna dusty rose brand kamu */
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.popular-list span:hover {
+    text-decoration: underline;
+}
+
+.close-icon {
+    cursor: pointer;
+    padding: 5px;
+}
+
 /* navbar end */
 
 /* hero */
