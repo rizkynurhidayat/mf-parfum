@@ -9,6 +9,7 @@
 <link
   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -295,84 +296,52 @@
 
 <!-- tentang kami end -->
 
-<!-- footer -->
-    <footer class="footer">
+
+<footer class="custom-footer">
     <div class="footer-container">
-
-    <!-- GRID 4 KOLOM -->
-    <ul class="footer-grid">
-      <li>
-        <div class="f">
-          <h3>Layanan pelanggan</h3>
-          <ul>
-            <li><a href="">Hubungi</a></li>
-            <li><a href="">Pengiriman & Pengembalian</a></li>
-            <li><a href="">Pertanyaan yang Sering Diajukan (FAQ)</a></li>
-          </ul>
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="img/logo-mf.png" alt="MF Parfum Logo">
+                <h2>MF Parfum</h2>
+            </div>
+            <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      </li>
-
-      <li>
-        <div class="f">
-          <h3>Temukan Kami</h3>
-          <ul>
-            <li><a href="">Lokasi Cabang 1</a></li>
-            <li><a href="">Lokasi Cabang 2</a></li>
-          </ul>
+        
+        <div class="footer-col">
+            <h4>Address</h4>
+            <div class="contact-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <span>123 Street, New York, USA</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone-alt"></i>
+                <span>+012 345 67890</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>info@example.com</span>
+            </div>
         </div>
-      </li>
 
-      <li>
-        <div class="f">
-          <h3>Brand Kami</h3>
-          <ul>
-            <li><a href="">Syarat & Ketentuan Hukum</a></li>
-            <li><a href="">Kebijakan Privasi</a></li>
-            <li><a href="">Kebijakan Cookie</a></li>
-          </ul>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Terms & Condition</a></li>
+            </ul>
         </div>
-      </li>
-
-      <li>
-        <div class="f">
-          <h3>Ikuti Kami</h3>
-          <div class="aplikasi">
-            <a href="https://instagram.com">
-                <img src="images/instagram.png" alt="">
-            </a>
-            <a href="https://tiktok.com/">
-                <img src="images/tik-tok.png" alt="">
-            </a>
-            <a href="https://snapchat.com/">
-                <img src="images/twitter.png" alt="">
-            </a>
-            <a href="https://facebook.com/">
-                <img src="images/facebook.png" alt="">
-            </a>
-            <a href="https://facebook.com/">
-                <img src="images/snapchat.png" alt="">
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    
-
-    <!-- LOGO -->
-    <a href="#top" class="logo-mf-footer">
-      <img src="images/logo.jpeg" alt="logo" class="img-logof">
-    </a>
-
-    <!-- MENU BAWAH -->
-    <ul class="footer-bottom">
-      <li><a href="">Kebijakan Privasi</a></li>
-      <li><a href="">Syarat dan Ketentuan</a></li>
-      <li><a href="">Kebijakan Cookie</a></li>
-    </ul>
-
-  </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 MF Parfum. All Rights Reserved.</p>
+    </div>
 </footer>
-<!-- footer end -->
     
     <!-- CTA Customer Service -->
     <!-- <a href="https://web.whatsapp.com/" class="cs-service" target="_blank">
