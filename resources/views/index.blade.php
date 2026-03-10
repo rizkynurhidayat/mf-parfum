@@ -132,34 +132,31 @@
             </div>
         </div>
         <div class="tab-content">
-            <div id="tab-1" class="tab-pane fade show p-0 active">
-                <div class="row g-4">
-                    @foreach($products as $product)
-                    
-                    <div class="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="product-item">
-        <div class="product-img-container">
-            <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
-            <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-        </div>
-        
-        <div class="text-center p-4">
-            <a class="d-block h5 mb-2 product-title" href="">{{ $product->name }}</a>
-            <span class="text-primary me-1">Rp {{ number_format($product->price, 0, ',', '.') }}</span>
-        </div>
-        
-        <div class="product-link-wrapper">
-            <a class="product-link border-end" href="">
-                <i class="fa fa-eye me-2"></i>Detail
-            </a>
-            <a class="product-link" href="">
-                <i class="fa fa-shopping-bag me-2"></i>Beli
-            </a>
-        </div>
-    </div>
-</div>
-        
-                    @endforeach
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+    <div class="row g-4">
+        @foreach($products as $product)
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="product-item">
+                <div class="product-img-container">
+                    <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
+                </div>
+                
+                <div class="text-center p-4">
+                    <span class="d-block h5 mb-2 product-title" href="">
+                        {{ $product->name }} - {{ $product->description }}
+                    </span>
+                    <span class="text-primary me-1" style="color: #C2185B !important; font-weight: 700;">
+                        Rp {{ number_format($product->price, 0, ',', '.') }}
+                    </span>
+                </div>
+                
+                <div class="product-link-wrapper">
+                    <a class="product-link-single" href="">
+                        <i class="fa fa-shopping-bag me-2"></i>Beli Sekarang
+                    </a>
+                </div>
+            </div> </div> @endforeach
+    </div> </div>
                     
                     <div class="col-12 text-center mt-5">
                         <a class="btn btn-primary rounded-pill py-3 px-5" href="">Lihat lebih banyak</a>

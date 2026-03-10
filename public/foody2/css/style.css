@@ -261,13 +261,28 @@
 
 
 /*** Product ***/
-.nav-pills .nav-item .btn {
-    color: var(--dark);
+/* 1. Warna Tombol Saat Tidak Aktif (Garis Pinggir) */
+.nav-pills .nav-item .btn-outline-primary {
+    color: #C2185B ;         /* Warna teks pink tua */
+    border-color: #F891B0 ;  /* Warna garis pink muda */
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border-radius: 8px;                /* Sedikit melengkung agar elegan */
 }
 
-.nav-pills .nav-item .btn:hover,
-.nav-pills .nav-item .btn.active {
-    color: #FFFFFF;
+/* 2. Warna Tombol Saat Di-Hover (Kursor Lewat) */
+.nav-pills .nav-item .btn-outline-primary:hover {
+    background-color: #F891B0 ; /* Background jadi pink muda */
+    border-color: #F891B0 ;
+    color: #ffffff ;            /* Teks jadi putih */
+}
+
+/* 3. Warna Tombol Saat Aktif (Sedang Dipilih) */
+.nav-pills .nav-item .btn-outline-primary.active {
+    background-color: #C2185B ; /* Background pink tua */
+    border-color: #C2185B ;
+    color: #ffffff ;            /* Teks putih */
+    box-shadow: 0 4px 10px rgba(194, 24, 91, 0.3); /* Efek bayangan halus */
 }
 
 .product-item {
