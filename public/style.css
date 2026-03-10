@@ -35,37 +35,133 @@ body{
     color: var(--dark);
 }
 
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav {
-        margin-top: 10px;
-        border-top: 1px solid rgba(0, 0, 0, .07);
-        background: #FFFFFF;
-    }
-
-    .navbar .navbar-nav .nav-link {
-        padding: 10px 0;
-    }
+.img-nav{
+  margin-top: 10px;
+  background-color: bisque;
+  margin: 0;
+  /* margin-right: 20px; */
 }
 
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        visibility: hidden;
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        transition: .5s;
-        opacity: 0;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
+nav ul li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 14px 40px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #9c9292;
+  /* background-color: #ffcfcf; */
+}
+
+nav ul li a.active {
+  background-color: #190771;
+}
+
+.search{
+    cursor: pointer;
+}
+
+/* Container Utama (Latar belakang dibuat transparan/gelap tipis saja) */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Gelap tipis agar web asli masih terlihat */
+    backdrop-filter: blur(4px); /* Efek blur halus di belakang kotak putih */
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Muncul dari atas */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Kotak Putih (The Card) */
+.search-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    margin-top: -100px; /* Sembunyi di atas sebelum aktif */
+    padding: 30px 50px;
+    border-radius: 0 0 15px 15px; /* Lengkungan hanya di bawah */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: margin-top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.search-overlay.active .search-card {
+    margin-top: 0; /* Meluncur turun saat aktif */
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Serif', 'Playfair Display', serif; /* Font elegan */
+}
+
+.search-body h3 {
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.popular-list {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+
+.popular-list span {
+    color: #FBA1B7; /* Warna dusty rose brand kamu */
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.popular-list span:hover {
+    text-decoration: underline;
+}
+
+.close-icon {
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* navbar end */
 
 /* hero */
 .swiper {
@@ -329,99 +425,105 @@ body{
 /* CTA chat */
 
 
-/* footer */
-.footer{
-  /* background: linear-gradient(#FFD1DA, #F875AA, #720E22); */
-  background-color: #f891b0;
-  padding: 110px 0 50px;
-  color: #FFFFFF;
+/* Styling Khusus Footer */
+.custom-footer {
+    background-color: #e97c95; /* Warna Pink sesuai gambar kamu */
+    padding: 60px 0 20px 0;
+    color: #ffffff !important; /* Semua teks jadi putih */
+    font-family: 'Poppins', sans-serif;
 }
 
-.footer-container{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
 }
 
-.footer-grid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  width: 100%;
-  margin-bottom: 130px;
-  padding: 0;
-  list-style: none;
+/* Logo Styling */
+.footer-logo img {
+    width: 60px; /* Sesuaikan ukuran logo */
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* Trik agar logo hitam jadi putih */
 }
 
-.footer-grid > li{
-  padding: 0;
-  margin: 0;
+.footer-logo h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.footer-grid .f{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.custom-footer p, .custom-footer span {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.footer-grid .f ul{
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.custom-footer h4 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
-.footer h3{
-  font-size: 18px;
-  margin-bottom: 14px;
+/* Link & Icon Styling */
+.footer-links {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-grid .f ul li{
-  margin-bottom: 8px;
-  font-size: 14px;
+.footer-links li {
+    margin-bottom: 12px;
 }
 
-.footer-grid{
-  grid-template-columns: 1.2fr 1fr 1fr 0.6fr;
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    opacity: 0.8;
 }
 
-.footer a{
-  text-decoration: none;
-  color: inherit;
+.footer-links a:hover {
+    opacity: 1;
+    padding-left: 8px;
 }
 
-.footer a:hover{
-  opacity: 0.6;
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.aplikasi{
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.aplikasi img{
-  width: 20px;
-  height: 20px;
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.img-logof{
-  display: block;
-  margin: 40px auto 45px;
-  width: 50px;
+.social-icon:hover {
+    background-color: #ffffff;
+    color: #f7a3b7; /* Warna pink saat hover */
 }
 
-.footer-bottom{
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 0;
-  margin-bottom: 30px;
-  list-style: none;
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-html {
-  scroll-behavior: smooth;
-}
-/* footer end */
-
-

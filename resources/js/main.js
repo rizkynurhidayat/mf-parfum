@@ -1,3 +1,26 @@
+const searchBtn = document.getElementById('search-btn');
+const searchOverlay = document.getElementById('search-overlay');
+const closeSearch = document.getElementById('close-search');
+
+if (searchBtn && searchOverlay) {
+    searchBtn.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        // Fokus ke input otomatis setelah muncul
+        setTimeout(() => document.getElementById('search-input').focus(), 500);
+    });
+
+    closeSearch.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+    });
+
+    // Menutup jika user mengklik area di luar kotak putih
+    searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) {
+            searchOverlay.classList.remove('active');
+        }
+    });
+}
+
 // hero section
   const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
