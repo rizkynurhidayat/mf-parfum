@@ -83,266 +83,97 @@ nav ul li a.active {
 /* hero end */
 
 /* Item Card */
-/* kategori produk */
-.kategori{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0 30px;
-}
-
-.kategori button {
-  background: transparent;
-  border: 2px solid #FF799C;
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #FF799C;
-  transition: 0.3s ease;
-}
-
-/* hover */
-.kategori button:hover {
-  background-color: #FF799C;
-  color: #fff;
-}
-
-/* tombol aktif */
-.kategori button.active {
-  background-color: #FF799C;
-  color: #fff;
-}
 
 
 
-
-/* Teks box atas */
-
-
-
-/* Box 5 */
-.box5 {
-  width: 280px;
-  height: 370px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 24px;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-
-}
-.box-atas{
-  position: relative;
-}
-.box-atas h2 {
-  font-size: 20px;
-  margin: 0;
-}
-.box-atas p {
-  margin-top: 8px;
-  color: #777;
-}
-.info-button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  
-  border: none;
-  background: #eaeaea;
-  cursor: pointer;
-}
-.product-img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-}
-.box-bawah {
-  text-align: center;
-}
-.box-bawah h2 {
-  color: black;
-}
-.buy-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  
-  background: #fff;
-  color: black;
-  letter-spacing: 3px;
-
-  transition: transform 0.8s ease-in-out;
-  cursor: pointer;
-}
-.buy-button:hover {
-  background: #777;
-  color: #fff;
-  transition: transform 0.8s ease-in-out;
-}
-
-/* Box 6 */
-.box6 {
-  width: 280px;
-  height: 370px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 24px;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-
-}
-.box-atas{
-  position: relative;
-}
-.box-atas h2 {
-  font-size: 20px;
-  margin: 0;
-}
-.box-atas p {
-  color: #777;
-}
-.info-button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  
-  border: none;
-  background: #eaeaea;
-  cursor: pointer;
-}
-.product-img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-}
-.box-bawah {
-  text-align: center;
-}
-.box-bawah h2 {
-  color: black;
-}
-.buy-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-
-  background: #fff;
-  color: black;
-  letter-spacing: 3px;
-  
-  transition: transform 0.8s ease-in-out;
-  cursor: pointer;
-}
-.buy-button:hover {
-  background: #777;
-  color: #fff;
-  transition: transform 0.8s ease-in-out;
-}
-
-.product-img {
-  height: 160px; 
-}
-
-/* Button Lihat Semua */
-.button-box {
-  background-color: #1f1f1f;
-  color: #fff;
-  
-  padding: 12px 28px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  
-  border: 1px solid #fff;
-  border-radius: 4px;
-  
-  cursor: pointer;
-}
-
-.button-box:hover {
-  background-color: #ffffff;
-  color: #1f1f1f;
-  border: 2px solid #1f1f1f;
-  cursor: pointer;
-}
-
-.button-lihat {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
-}
-
-.cembung:hover{
-  transform: scale(1.12) translateZ(60px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
-  z-index: 10;
-}
-
-.buy-button {
-  position: relative;
-  z-index: 20;
-  pointer-events: auto;
-}
-
+/* ===== Samakan tinggi card produk ===== */
 /* ===============================
-   HOVER EFFECT CARD PRODUK
+   ITEM PRODUCT (TEMPLATE STYLE)
    =============================== */
 
-/* semua card */
-[class^="box"] {
-  transition:
-    transform 0.45s cubic-bezier(.4,0,.2,1),
-    box-shadow 0.45s ease;
-  position: relative;
-  z-index: 1;
+.product-item {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 45px rgba(0,0,0,.07);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    border: 1px solid #eeeeee;
 }
 
-/* card yang di-hover (zoom + cembung) */
-[class^="box"].cembung:hover {
-  transform: scale(1.12) translateZ(60px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
-  z-index: 10;
+.product-item:hover {
+    box-shadow: 0 0 45px rgba(0,0,0,.15);
+    transform: translateY(-5px); /* Efek melayang sedikit saat hover */
 }
 
-/* card di kanan (ikut geser ke kanan) */
-[class^="box"]:hover + [class^="box"] {
-  transform: translateX(40px) scale(0.95);
+/* Container Gambar agar konsisten */
+.product-img-container {
+    height: 250px; /* Tinggi kotak gambar tetap sama */
+    overflow: hidden;
+    position: relative;
+    background: #f8f9fa;
 }
 
-/* card di kiri (ikut geser ke kiri) */
-[class^="box"]:has(+ [class^="box"]:hover) {
-  transform: translateX(-40px) scale(0.95);
+.product-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar dipotong otomatis secara proporsional */
+    transition: .5s;
 }
 
-/* gambar ikut hidup dikit */
-[class^="box"] .product-img {
-  transition: transform 0.4s ease;
+.product-item:hover img {
+    transform: scale(1.1);
 }
 
-[class^="box"]:hover .product-img {
-  transform: scale(1.1);
+/* Nama/Judul Produk agar sejajar */
+.product-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Maksimal 2 baris teks */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3rem; /* Menjaga tinggi area teks */
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    text-decoration: none;
 }
 
-/* tombol beli naik dikit */
-[class^="box"]:hover .buy-button {
-  transform: translateY(-4px);
+.product-title:hover {
+    color: #FF799C; /* Warna pink saat hover sesuai tema kamu */
 }
+
+/* Area konten tengah agar bisa tumbuh (push button ke bawah) */
+.product-item .text-center {
+    flex-grow: 1;
+}
+
+/* Link di bagian footer card (Detail & Keranjang) */
+.product-link-wrapper {
+    margin-top: auto; /* Memaksa footer card selalu di paling bawah */
+    display: flex;
+    border-top: 1px solid #eeeeee;
+}
+
+.product-link {
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s ease;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.product-link:hover {
+    color: #FF799C;
+    background: #fff8f9;
+}
+
+.product-link i {
+    color: #FF799C; /* Warna icon pink */
+}
+/* item end */
 
 /* item end */
 
@@ -393,6 +224,8 @@ nav ul li a.active {
   transform: scale(0.9);
   opacity: 0.6;
 }
+
+
 
 /* tentang kami end */
 
