@@ -29,5 +29,28 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123456'),
         ]);
+
+         Hero::create([
+            'image' => 'hero1.jpg',
+        ]);
+
+         Product::create([
+            'name' => 'Rose',
+            'description' => '35 ml',
+            'image' => '',
+            'price' => 100000,
+        ]);
+
+         Gallery::create([
+            'title' => 'Galeri kami',
+            'image' => 'gallery1.jpg',
+        ]);
+
+         Information::create([
+            'phone' => '0897635534',
+            'tiktok' => 'tiktok.com',
+            'instagram' => 'instagram.com',
+            'location' => 'jl.mangga',
+        ]);
     }
 }
