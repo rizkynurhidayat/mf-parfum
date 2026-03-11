@@ -9,17 +9,33 @@ use App\Models\Information;
 use App\Models\Product;
 class HomeController extends Controller
 {   
-    public function view()
-    {
-        $heros = Hero::all();
-        $products = Product::all();
-        $informations = Information::all();
+   public function view(Request $request)
+{
+    $heros = Hero::all();
+    $informations = Information::all();
+    $kategori = $request->query('kategori'); // Gunakan query() untuk mengambil data dari URL
 
-        return view('index', [
-            "heros" => $heros,
-            "products" => $products,
-            "information" => $informations,
-        ]);
-        
+    if ($kategori == 'termurah') {
+        $products = Product::orderBy('price', 'asc')->get();
+    } 
+    elseif ($kategori == 'terlaris') {
+        // Pastikan kolom 'count' ada di database Anda
+        $products = Product::orderBy('count', 'desc')->get();
+    } 
+    elseif ($kategori == 'terbaru') {
+        // Biasanya nama kolomnya 'created_at', bukan 'created'
+        $products = Product::orderBy('created_at', 'desc')->get();
+    } 
+    else {
+        // Default jika tidak ada kategori yang dipilih (misal: terbaru)
+        $products = Product::orderBy('created_at', 'desc')->get();
     }
+
+    return view('index', [
+        "heros" => $heros,
+        "products" => $products,
+        "information" => $informations,
+    ]);
 }
+}
+
