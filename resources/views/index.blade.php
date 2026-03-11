@@ -9,6 +9,7 @@
 <link
   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
 <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -32,6 +33,26 @@
 </head>
 
 <body>
+    <!-- navbar -->
+    <nav>
+        <img class="img-nav" src="images/logo.jpeg" width="30px" height="30px" alt="">
+        <ul class="ul-nav">
+            <li>
+                <a href="#Beranda">Beranda</a>
+            </li>
+            <li>
+                <a href="#Produk">Produk</a>
+            </li>
+            <li>
+                <a href="#Tentang">Galeri</a>
+            </li>
+            <li>
+                <a href="#Mitra">Mitra</a>
+            </li>
+        </ul>
+        {{-- <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        </div> --}}
      <!-- Navbar Start -->
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
@@ -48,6 +69,56 @@
             </div>
         </div>
 
+        <!-- <div id="menu" onclick="openMenu()"> -->
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg> -->
+        <!-- </div> -->
+
+        <div class="search" id="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        </div>
+
+{{-- <div id="search-overlay" class="search-overlay">
+    <div class="search-card">
+        <div class="search-header">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            <input type="text" placeholder="Cari di sini..." id="search-input">
+            <div id="close-search" class="close-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </div>
+        </div>
+        <div class="search-body">
+            <h3>Paling Populer Saat Ini</h3>
+            </div>
+    </div>
+</div> --}}
+
+        <div id="search-overlay" class="search-overlay">
+        <div class="search-card">
+        <div class="search-header">
+            <div class="search-input-group">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                <input type="text" placeholder="Cari di sini..." id="search-input">
+            </div>
+            <div id="close-search" class="close-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </div>
+        </div>
+        <div class="search-body">
+            <h3>Paling Populer Saat Ini</h3>
+            <div class="popular-list">
+                <span>Parfum Rose</span>
+                <span>Best Seller</span>
+                <span>Koleksi Baru</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </nav>
+
+    <div class="mobile-nav">
+        <div id="back" onclick="closeMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="fw-bold text-primary m-0">F<span class="text-secondary">oo</span>dy</h1>
@@ -213,84 +284,52 @@
 
 <!-- tentang kami end -->
 
-<!-- footer -->
-    <footer class="footer">
+
+<footer class="custom-footer">
     <div class="footer-container">
-
-    <!-- GRID 4 KOLOM -->
-    <ul class="footer-grid">
-      <li>
-        <div class="f">
-          <h3>Layanan pelanggan</h3>
-          <ul>
-            <li><a href="">Hubungi</a></li>
-            <li><a href="">Pengiriman & Pengembalian</a></li>
-            <li><a href="">Pertanyaan yang Sering Diajukan (FAQ)</a></li>
-          </ul>
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="img/logo-mf.png" alt="MF Parfum Logo">
+                <h2>MF Parfum</h2>
+            </div>
+            <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      </li>
-
-      <li>
-        <div class="f">
-          <h3>Temukan Kami</h3>
-          <ul>
-            <li><a href="">Lokasi Cabang 1</a></li>
-            <li><a href="">Lokasi Cabang 2</a></li>
-          </ul>
+        
+        <div class="footer-col">
+            <h4>Address</h4>
+            <div class="contact-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <span>123 Street, New York, USA</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone-alt"></i>
+                <span>+012 345 67890</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>info@example.com</span>
+            </div>
         </div>
-      </li>
 
-      <li>
-        <div class="f">
-          <h3>Brand Kami</h3>
-          <ul>
-            <li><a href="">Syarat & Ketentuan Hukum</a></li>
-            <li><a href="">Kebijakan Privasi</a></li>
-            <li><a href="">Kebijakan Cookie</a></li>
-          </ul>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Terms & Condition</a></li>
+            </ul>
         </div>
-      </li>
-
-      <li>
-        <div class="f">
-          <h3>Ikuti Kami</h3>
-          <div class="aplikasi">
-            <a href="https://instagram.com">
-                <img src="images/instagram.png" alt="">
-            </a>
-            <a href="https://tiktok.com/">
-                <img src="images/tik-tok.png" alt="">
-            </a>
-            <a href="https://snapchat.com/">
-                <img src="images/twitter.png" alt="">
-            </a>
-            <a href="https://facebook.com/">
-                <img src="images/facebook.png" alt="">
-            </a>
-            <a href="https://facebook.com/">
-                <img src="images/snapchat.png" alt="">
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    
-
-    <!-- LOGO -->
-    <a href="#top" class="logo-mf-footer">
-      <img src="images/logo.jpeg" alt="logo" class="img-logof">
-    </a>
-
-    <!-- MENU BAWAH -->
-    <ul class="footer-bottom">
-      <li><a href="">Kebijakan Privasi</a></li>
-      <li><a href="">Syarat dan Ketentuan</a></li>
-      <li><a href="">Kebijakan Cookie</a></li>
-    </ul>
-
-  </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 MF Parfum. All Rights Reserved.</p>
+    </div>
 </footer>
-<!-- footer end -->
     
     <!-- CTA Customer Service -->
     <!-- <a href="https://web.whatsapp.com/" class="cs-service" target="_blank">
@@ -306,6 +345,7 @@
     </a>
 
     <script src="main.js"></script>
+    @vite(['resources/js/app.js', 'resources/js/main.js'])
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <!-- Template Javascript -->
     <script src="js/main.js"></script>
