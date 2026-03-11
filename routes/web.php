@@ -16,7 +16,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/Login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/Login', [AuthController::class, 'login']);
     // route landingpage
-    Route::get('/', [HomeController::class, 'view']);
+    Route::get('/', [HomeController::class, 'view'])->name('home');
+    Route::get('/product/buy/{id}', [ProductController::class, 'trackClick'])->name('product.buy');
 
 });
 

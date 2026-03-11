@@ -204,7 +204,7 @@
 <!-- hero section end -->
 
 <!-- item Product -->
-  <div class="container-xxl py-5">
+  <div class="container-xxl py-5" id="Produk">
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
@@ -214,17 +214,20 @@
                 </div>
             </div>
             <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                    <li class="nav-item me-2">
-                        <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Terbaru</a>
-                    </li>
-                    <li class="nav-item me-2">
-                        <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Terlaris</a>
-                    </li>
-                    <li class="nav-item me-0">
-                        <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Termurah</a>
-                    </li>
-                </ul>
+               <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+    <li class="nav-item me-2">
+        <a class="btn btn-outline-primary border-2 {{ request('kategori') == 'terbaru' ? 'active' : '' }}" 
+           href="{{ route('home', ['kategori' => 'terbaru']) }}#Produk">Terbaru</a>
+    </li>
+    <li class="nav-item me-2">
+        <a class="btn btn-outline-primary border-2 {{ request('kategori') == 'terlaris' ? 'active' : '' }}" 
+           href="{{ route('home', ['kategori' => 'terlaris']) }}#Produk">Terlaris</a>
+    </li>
+    <li class="nav-item me-0">
+        <a class="btn btn-outline-primary border-2 {{ request('kategori') == 'termurah' ? 'active' : '' }}" 
+           href="{{ route('home', ['kategori' => 'termurah']) }}#Produk">Termurah</a>
+    </li>
+</ul>
             </div>
         </div>
         <div class="tab-content">
@@ -247,10 +250,10 @@
                 </div>
                 
                 <div class="product-link-wrapper">
-                    <a class="product-link-single" href="">
-                        <i class="fa fa-shopping-bag me-2"></i>Beli Sekarang
-                    </a>
-                </div>
+    <a class="product-link-single" href="{{ route('product.buy', $product->id) }}" target="_blank">
+        <i class="fa fa-shopping-bag me-2"></i>Beli Sekarang
+    </a>
+</div>
             </div> </div> @endforeach
     </div> </div>
                     

@@ -94,6 +94,17 @@ class ProductController extends Controller
 
         return redirect()->route('product.index')->with('success', 'Berhasil menghapus data produk!');
     }
+
+    public function trackClick($id)
+{
+    $product = Product::findOrFail($id);
+    $product->increment('count'); // Menambah +1 pada kolom count
+
+    // Ganti URL ini dengan link WhatsApp atau tujuan pembelian Anda
+    $waUrl = "https://shopee.co.id/" . urlencode($product->name);
+    
+    return redirect()->away($waUrl);
+}
 }
 
 
