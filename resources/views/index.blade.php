@@ -136,8 +136,8 @@
         <div class="tab-content">
           <div id="tab-1" class="tab-pane fade show p-0 active">
     <div class="row g-4">
-        @foreach($products as $product)
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+        @foreach($products as $index => $product)
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp {{ $index >= 8 ? 'extra-product d-none' : '' }}" data-wow-delay="0.1s">
             <div class="product-item">
                 <div class="product-img-container">
                     <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
@@ -166,7 +166,7 @@
     </div> </div>
                     
                     <div class="col-12 text-center mt-5">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Lihat lebih banyak</a>
+                        <button class="btn btn-primary rounded-pill py-3 px-5" id="showMoreBtn">Lihat lebih banyak</button>
                     </div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
     <script src="{{ asset ('foody2')}}/lib/easing/easing.min.js"></script>
     <script src="{{ asset ('foody2')}}/lib/waypoints/waypoints.min.js"></script>
     <script src="{{ asset ('foody2')}}/lib/owlcarousel/owl.carousel.min.js"></script>
-    </script>
+    
 
     <script>
       const swiper = new Swiper('.swiper', {
@@ -285,9 +285,20 @@
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+
       });
     </script>
 
-</body> </html>
+    <script>
+document.getElementById("showMoreBtn").addEventListener("click", function() {
+    document.querySelectorAll(".extra-product").forEach(function(el){
+        el.classList.remove("d-none");
+    });
+
+    this.style.display = "none";
+});
+</script>
+
+
 </body>
 </html>
