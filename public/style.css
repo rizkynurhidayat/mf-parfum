@@ -470,6 +470,7 @@ nav ul li a.active {
 }
 
 .footer-links a:hover {
+    color: #d22268;
     opacity: 1;
     padding-left: 8px;
 }
