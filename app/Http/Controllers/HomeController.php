@@ -22,10 +22,10 @@ class HomeController extends Controller
         // Pastikan kolom 'count' ada di database Anda
         $products = Product::orderBy('count', 'desc')->get();
     } 
-    elseif ($kategori == 'terbaru') {
-        // Biasanya nama kolomnya 'created_at', bukan 'created'
-        $products = Product::orderBy('created_at', 'desc')->get();
-    } 
+elseif ($kategori == 'terbaru') {
+    // Gunakan created_at (standar Laravel) bukan created
+    $products = Product::orderBy('created_at', 'desc')->get();
+}
     else {
         // Default jika tidak ada kategori yang dipilih (misal: terbaru)
         $products = Product::orderBy('created_at', 'desc')->get();

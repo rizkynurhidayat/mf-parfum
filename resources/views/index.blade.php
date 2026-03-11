@@ -141,6 +141,11 @@
             <div class="product-item">
                 <div class="product-img-container">
                     <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
+                    @if($product->created_at >= now()->subDays(1))
+                <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3" style="z-index: 10;">
+                    New
+                </div>
+            @endif
                 </div>
                 
                 <div class="text-center p-4">
