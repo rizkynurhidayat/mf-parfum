@@ -34,30 +34,44 @@
 
 <body>
     <!-- navbar -->
-    <nav>
-        <img class="img-nav" src="images/logo.jpeg" width="30px" height="30px" alt="">
-        <ul class="ul-nav">
-            <li>
-                <a href="#Beranda">Beranda</a>
-            </li>
-            <li>
-                <a href="#Produk">Produk</a>
-            </li>
-            <li>
-                <a href="#Tentang">Galeri</a>
-            </li>
-            <li>
-                <a href="#Mitra">Mitra</a>
-            </li>
-        </ul>
+   <nav>
+    <img class="img-nav" src="images/logo.jpeg" width="30px" height="30px" alt="Logo">
+    
+    <ul class="ul-nav">
+        <li><a href="#Beranda">Beranda</a></li>
+        <li><a href="#Produk">Produk</a></li>
+        <li><a href="#Tentang">Galeri</a></li>
+        <li><a href="#Mitra">Mitra</a></li>
+    </ul>
 
+    <div class="nav-actions">
         <div class="search" id="search-btn">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
         </div>
+        {{-- <div class="hamburger" id="hamburger-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </div> --}}
+        <div class="hamburger" id="hamburger-btn" onclick="openMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#1f1f1f"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </div>
+    </div>
+</nav>
 
+<div class="mobile-nav" id="mobile-nav">
+    <div id="back" onclick="closeMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+    </div>
+    
+    <ul class="mobile-menu-list">
+        <li><a href="#Beranda" onclick="closeMenu()">Beranda</a></li>
+        <li><a href="#Produk" onclick="closeMenu()">Produk</a></li>
+        <li><a href="#Tentang" onclick="closeMenu()">Galeri</a></li>
+        <li><a href="#Mitra" onclick="closeMenu()">Mitra</a></li>
+    </ul>
+</div>
 
-        <div id="search-overlay" class="search-overlay">
-        <div class="search-card">
+<div id="search-overlay" class="search-overlay">
+    <div class="search-card">
         <div class="search-header">
             <div class="search-input-group">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
@@ -76,13 +90,7 @@
             </div>
         </div>
     </div>
-    </div>
-    </nav>
-
-    <div class="mobile-nav">
-        <div id="back" onclick="closeMenu()">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-        </div>
+</div>
        <!-- navbar end -->
 
 <!-- hero section -->
@@ -199,9 +207,7 @@
     </div>
   </div>
 </section>
-
 <!-- tentang kami end -->
-
 
 <footer class="custom-footer">
     <div class="footer-container">
@@ -212,17 +218,20 @@
             </div>
             <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
             <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="{{ $information->twitter }}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="{{ $information->tiktok }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ $information->instagram }}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         
         <div class="footer-col">
             <h4>Address</h4>
             <div class="contact-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <span>123 Street, New York, USA</span>
+                <a href="{{ $information->location }}" target="_blank">
+
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>123 Street, New York, USA</span>
+                </a>
             </div>
             <div class="contact-item">
                 <i class="fa fa-phone-alt"></i>
@@ -254,10 +263,7 @@
     <img src="cs1.png" alt="Customer Service">
     </a> -->
 
-    <a href="https://web.whatsapp.com/" class="cs-service" target="_blank">
-    <!-- <img src="cs1.png" alt="Customer Service"> -->
-        <!-- <i class="fa-chisel fa-regular fa-comment"></i> -->
-        <!-- <i class="fa-etch fa-solid fa-comment"></i> -->
+    <a href="{{ $information->phone }}" class="cs-service" target="_blank">
     <img src="images/chat5.png" alt="Customer Service">
         
     </a>
@@ -277,6 +283,14 @@
     
 
    <script>
+document.getElementById("showMoreBtn").addEventListener("click", function() {
+    document.querySelectorAll(".extra-product").forEach(function(el){
+        el.classList.remove("d-none");
+    });
+
+    this.style.display = "none";
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // 1. Inisialisasi Swiper Hero (Banner Atas)
     // Kita panggil spesifik lewat section #Beranda

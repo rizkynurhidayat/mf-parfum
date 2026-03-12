@@ -13,9 +13,8 @@ class HomeController extends Controller
    public function view(Request $request)
 {
     $heros = Hero::all();
-    $informations = Information::all();
+    $informations = Information::first();
     $galleries = Gallery::all();
-
     $kategori = $request->query('kategori'); // Gunakan query() untuk mengambil data dari URL
 
     if ($kategori == 'termurah') {
