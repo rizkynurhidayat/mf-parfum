@@ -761,3 +761,62 @@ nav {
 .hamburger svg {
     pointer-events: none;
 }
+
+
+
+/* --- Styling Khusus Halaman About --- */
+
+.about-img img {
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.about-img:hover img {
+    transform: scale(1.02);
+}
+
+/* Mengatur warna pink agar konsisten dengan tombol produk */
+.text-primary-mf {
+    color: #C2185B !important;
+}
+
+.bg-primary-mf {
+    background-color: #C2185B !important;
+    color: white;
+}
+
+/* Styling Poin-Poin Ceklis */
+.about-features p {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.about-features i {
+    width: 30px;
+    height: 30px;
+    background: rgba(194, 24, 91, 0.1); /* Pink transparan */
+    color: #C2185B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Memperbaiki jarak Section Firm Visit (Background Hijau tadi) */
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.bg-icon {
+    background-color: #C2185B; /* Warna hijau template */
+    /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png");  */
+    /* Opsional: Tekstur halus */
+}
+
+
+

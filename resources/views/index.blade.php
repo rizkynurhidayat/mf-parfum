@@ -8,7 +8,7 @@
 
 <link
   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Favicon -->
@@ -186,13 +186,21 @@
 
 
 <!-- tentang kami -->
-    <section id="Tentang">
-    <div class="tentang">
-        <h1>Gallery</h1>
+    <div class="container-xxl pt-5 pb-0" id="Tentang">
+    <div class="container">
+        <div class="row g-0 gx-5 align-items-end">
+            <div class="col-lg-6">
+                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">Galeri</h1>
+                    <!-- <p>Lihat koleksi foto eksklusif dari produk dan aktivitas kami sehari-hari.</p> -->
+                </div>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
     </div>
-</section>
+</div>
     
-<section class="mini-swiper-section">
+<section class="mini-swiper-section" style="margin-top: -20px;">
   <div class="swiper mini-swiper" id="swiperGallery">
     <div class="swiper-wrapper">
         @foreach($galleries as $gallery)
@@ -246,7 +254,7 @@
         <div class="footer-col">
             <h4>Quick Links</h4>
             <ul class="footer-links">
-                <li><a href="#">About Us</a></li>
+                <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Our Services</a></li>
                 <li><a href="#">Terms & Condition</a></li>
@@ -262,11 +270,18 @@
     <!-- <a href="https://web.whatsapp.com/" class="cs-service" target="_blank">
     <img src="cs1.png" alt="Customer Service">
     </a> -->
-
+<!-- 
     <a href="{{ $information->phone }}" class="cs-service" target="_blank">
     <img src="images/chat5.png" alt="Customer Service">
         
-    </a>
+    </a> -->
+
+    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $information->phone) }}?text=Halo%20MF%20Parfum,%20saya%20ingin%20tanya%20mengenai%20produk%20dan%20kemitraan." 
+   class="cs-service" 
+   target="_blank" 
+   style="position: fixed; bottom: 30px; right: 30px; z-index: 999;">
+    <img src="images/chat5.png" alt="Customer Service" style="width: 50px; height: 50px;">
+</a>
 
     <script src="main.js"></script>
     @vite(['resources/js/app.js', 'resources/js/main.js'])
@@ -329,3 +344,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
+

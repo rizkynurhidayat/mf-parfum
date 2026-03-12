@@ -19,6 +19,12 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', [HomeController::class, 'view'])->name('home');
     Route::get('/product/buy/{id}', [ProductController::class, 'trackClick'])->name('product.buy');
 
+    Route::get('/about', function () {
+    // Ambil data info biar footer-nya gak kosong/error
+    $information = \App\Models\Information::first(); 
+    return view('about', compact('information'));
+})->name('about');
+
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -41,9 +47,18 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/Hero/{hero}', [HeroController::class, 'destroy'])->name('hero.destroy');
 
      // route info
-    Route::get('/Information', [InfoController::class, 'view'])->name('information.index');
-    Route::get('/Information/Edit/{information}', [InfoController::class, 'edit'])->name('information.edit');
-    Route::put('/Information/Edit/{information}', [InfoController::class, 'update'])->name('information.update');
+    // Route::get('/Information', [InfoController::class, 'view'])->name('information.index');
+    // Route::get('/Information/Edit/{information}', [InfoController::class, 'edit'])->name('information.edit');
+    // Route::put('/Information/Edit/{information}', [InfoController::class, 'update'])->name('information.update');
+
+    // route info
+Route::get('/Information', [InfoController::class, 'view'])->name('information.index');
+Route::get('/Information/Create', [InfoController::class, 'create'])->name('information.create'); // Tambah ini
+Route::post('/Information/Store', [InfoController::class, 'store'])->name('information.store'); // Tambah ini
+Route::get('/Information/Edit/{information}', [InfoController::class, 'edit'])->name('information.edit');
+Route::put('/Information/Edit/{information}', [InfoController::class, 'update'])->name('information.update');
+Route::delete('/Information/{information}', [InfoController::class, 'destroy'])->name('information.destroy'); // Tambah ini
+
 
     // route galeri
     Route::get('/Gallery', [GalleryController::class, 'view'])->name('gallery.index');

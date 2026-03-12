@@ -11,6 +11,7 @@
               <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h5 class="card-header">Information Data</h5>
+                    <a href="{{ route('information.create') }}" class="btn btn-primary">Add Data</a>
                     
                 </div>
                 <div class="table-responsive text-nowrap">
@@ -40,7 +41,12 @@
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('information.edit', $info) }}"
-                                  ><i class="bx bx-edit-alt me-1"></i>Edit</a>                               
+                                  ><i class="bx bx-edit-alt me-1"></i>Edit</a> 
+                                  <form action="{{ route('information.destroy', $info->id) }}" method="POST" onsubmit="return confirm('Yakin hapus?')">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="dropdown-item text-danger"><i class="bx bx-trash me-1"></i>Delete</button>
+                              </form>                              
                               </div>
                             </div>
                           </td>
@@ -51,5 +57,18 @@
                 </div>
               </div>
 </div>
+
+<style>
+    /* Supaya menu dropdown tidak terpotong oleh container tabel */
+    .table-responsive {
+        overflow: inherit !important;
+    }
+    
+    /* Tambahan agar posisi dropdown pas */
+    .dropdown-menu {
+        z-index: 1000;
+    }
+</style>
+
 <!--/ Hoverable Table rows -->
 @endsection
