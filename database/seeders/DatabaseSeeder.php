@@ -7,6 +7,10 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 // tambahkan ini
 use Illuminate\Support\Facades\Hash;
+use App\Models\Hero;
+use App\Models\Product;
+use App\Models\Gallery;
+use App\Models\Information;
 
 class DatabaseSeeder extends Seeder
 {
@@ -31,7 +35,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
          Hero::create([
-            'image' => 'hero1.jpg',
+            'image' => '',
+        ]);
+
+        Hero::create([
+            'image' => '',
+        ]);
+
+        Hero::create([
+            'image' => '',
         ]);
 
          Product::create([
@@ -43,7 +55,7 @@ class DatabaseSeeder extends Seeder
 
          Gallery::create([
             'title' => 'Galeri kami',
-            'image' => 'gallery1.jpg',
+            'image' => '',
         ]);
 
          Information::create([

@@ -179,17 +179,23 @@
 
 <!-- tentang kami -->
     <section id="Tentang">
-        <div class="tentang">
-            <h1>Tentang Kami</h1>
-        </div>
-    </section>
+    <div class="tentang">
+        <h1>Gallery</h1>
+    </div>
+</section>
     
 <section class="mini-swiper-section">
-  <div class="swiper mini-swiper">
+  <div class="swiper mini-swiper" id="swiperGallery">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/foto.jpeg"></div>
-      <div class="swiper-slide"><img src="images/fotoo.png"></div>
-      <div class="swiper-slide"><img src="images/fotooo.jpeg"></div>
+        @foreach($galleries as $gallery)
+        <div class="swiper-slide">
+            @if($gallery->image)
+                <img src="{{ asset('storage/'.$gallery->image) }}">
+            @else
+                <img src="{{ asset('images/default-gallery.png') }}">
+            @endif
+        </div>
+        @endforeach
     </div>
   </div>
 </section>
@@ -270,35 +276,42 @@
     <script src="{{ asset ('foody2')}}/lib/owlcarousel/owl.carousel.min.js"></script>
     
 
-    <script>
-      const swiper = new Swiper('.swiper', {
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Inisialisasi Swiper Hero (Banner Atas)
+    // Kita panggil spesifik lewat section #Beranda
+    const heroSwiper = new Swiper('#Beranda .swiper', {
         loop: true,
         autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
+            delay: 3000,
+            disableOnInteraction: false,
         },
         pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+            el: '.swiper-pagination',
+            clickable: true,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-
-      });
-    </script>
-
-    <script>
-document.getElementById("showMoreBtn").addEventListener("click", function() {
-    document.querySelectorAll(".extra-product").forEach(function(el){
-        el.classList.remove("d-none");
     });
 
-    this.style.display = "none";
+    // 2. Inisialisasi Swiper Gallery (Yang tadinya macet)
+    // Kita panggil pakai ID unik agar tidak tertukar
+    const gallerySwiper = new Swiper('#swiperGallery', {
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto', // Ini penting agar ukuran 260px di CSS jalan
+        spaceBetween: 30,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        // Efek transisi biar lebih mulus
+        speed: 800, 
+    });
 });
-</script>
-
+</script> 
 
 </body>
 </html>

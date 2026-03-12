@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 use App\Models\Hero;
 use App\Models\Information;
 use App\Models\Product;
+use App\Models\Gallery;
 class HomeController extends Controller
 {   
    public function view(Request $request)
 {
     $heros = Hero::all();
     $informations = Information::all();
+    $galleries = Gallery::all();
+
     $kategori = $request->query('kategori'); // Gunakan query() untuk mengambil data dari URL
 
     if ($kategori == 'termurah') {
@@ -35,6 +38,7 @@ elseif ($kategori == 'terbaru') {
         "heros" => $heros,
         "products" => $products,
         "information" => $informations,
+        "galleries" => $galleries
     ]);
 }
 }
