@@ -48,6 +48,7 @@ class DatabaseSeeder extends Seeder
          Information::create([
             'phone' => '0897635534',
             'tiktok' => 'tiktok.com',
+            'twitter' => 'twitter.com',
             'instagram' => 'instagram.com',
             'location' => 'jl.mangga',
         ]);
