@@ -34,29 +34,16 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
         ]);
 
-         Hero::create([
-            'image' => '',
-        ]);
-
-        Hero::create([
-            'image' => '',
-        ]);
-
-        Hero::create([
-            'image' => '',
-        ]);
-
          Product::create([
             'name' => 'Rose',
             'description' => '35 ml',
-            'image' => '',
+            'image' => 'null',
             'price' => 100000,
         ]);
 
          Gallery::create([
             'title' => 'Galeri kami',
-            'image' => '',
-        ]);
+            'image' => 'null',]);
 
          Information::create([
             'phone' => '0897635534',
@@ -65,4 +52,4 @@ class DatabaseSeeder extends Seeder
             'location' => 'jl.mangga',
         ]);
     }
-}
+}   
