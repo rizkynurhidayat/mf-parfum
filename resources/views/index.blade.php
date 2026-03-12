@@ -212,17 +212,20 @@
             </div>
             <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
             <div class="social-links">
-                <a href="{{ $information->twitter }}" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="{{ $information->tiktok }}" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="{{ $information->instagram }}" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="{{ $information->twitter }}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="{{ $information->tiktok }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ $information->instagram }}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         
         <div class="footer-col">
             <h4>Address</h4>
             <div class="contact-item">
-                <i class="fa fa-map-marker-alt"></i>
-                <span>123 Street, New York, USA</span>
+                <a href="{{ $information->location }}" target="_blank">
+
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>123 Street, New York, USA</span>
+                </a>
             </div>
             <div class="contact-item">
                 <i class="fa fa-phone-alt"></i>
@@ -254,10 +257,7 @@
     <img src="cs1.png" alt="Customer Service">
     </a> -->
 
-    <a href="https://web.whatsapp.com/" class="cs-service" target="_blank">
-    <!-- <img src="cs1.png" alt="Customer Service"> -->
-        <!-- <i class="fa-chisel fa-regular fa-comment"></i> -->
-        <!-- <i class="fa-etch fa-solid fa-comment"></i> -->
+    <a href="{{ $information->phone }}" class="cs-service" target="_blank">
     <img src="images/chat5.png" alt="Customer Service">
         
     </a>
