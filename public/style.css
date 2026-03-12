@@ -5,22 +5,22 @@ body{
 }
 
 /* navbar */
-nav{ 
+nav { 
   display: flex;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #ffffff;
-  justify-content: space-around;
+  justify-content: space-between; 
   align-items: center;
-
   z-index: 9999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   height: 70px;
+  padding: 0 5%;
 }
 
 .img-nav{
-  background-color: transparent; /* Ubah dari bisque jika ingin bersih */
+  background-color: transparent;
   margin: 0;
 }
 
@@ -28,8 +28,8 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin: 0;  /* Tambahkan baris ini */
-  padding: 0; /* Tambahkan baris ini */
+  margin: 0; 
+  padding: 0;
 }
 
 nav ul li a {
@@ -52,19 +52,28 @@ nav ul li a.active {
     cursor: pointer;
 }
 
-/* Container Utama (Latar belakang dibuat transparan/gelap tipis saja) */
+.search {
+    cursor: pointer;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .search-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Gelap tipis agar web asli masih terlihat */
-    backdrop-filter: blur(4px); /* Efek blur halus di belakang kotak putih */
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(4px);
     z-index: 10000;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Muncul dari atas */
+    align-items: flex-start; 
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
@@ -75,20 +84,19 @@ nav ul li a.active {
     visibility: visible;
 }
 
-/* Kotak Putih (The Card) */
 .search-card {
     background: #ffffff;
     width: 100%;
     max-width: 900px;
-    margin-top: -100px; /* Sembunyi di atas sebelum aktif */
+    margin-top: -100px; 
     padding: 30px 50px;
-    border-radius: 0 0 15px 15px; /* Lengkungan hanya di bawah */
+    border-radius: 0 0 15px 15px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: margin-top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .search-overlay.active .search-card {
-    margin-top: 0; /* Meluncur turun saat aktif */
+    margin-top: 0; 
 }
 
 .search-header {
@@ -511,4 +519,245 @@ nav ul li a.active {
     margin-top: 50px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+
+/* Untuk Tablet & Layar Menengah (max-width: 991px) */
+@media (max-width: 991px) {
+    /* Navbar: Kurangi jarak antar menu agar tidak nabrak */
+    nav ul li a {
+        padding: 0px 20px;
+    }
+
+    /* Hero Swiper: Kurangi tinggi agar proporsional */
+    .swiper {
+        height: 60vh;
+    }
+
+    /* Mini Swiper (Tentang Kami): Kurangi tinggi gambar */
+    .mini-swiper img {
+        height: 350px;
+    }
+}
+
+/* Untuk Handphone / Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar: Sembunyikan menu teks desktop untuk diganti dengan mobile menu */
+    nav ul.ul-nav {
+        display: none; 
+    }
+    
+    /* Beri jarak pada logo dan icon search agar tidak mepet layar */
+    .img-nav {
+        margin-left: 20px;
+    }
+
+    .search {
+        margin-right: 20px;
+    }
+
+    /* Hero Swiper: Sesuaikan tinggi pada layar HP */
+    .swiper {
+        height: 50vh;
+        margin-top: 70px; /* Pastikan tidak tertutup navbar yang fix */
+    }
+
+    /* Search Card: Sesuaikan ukuran kotak pencarian agar tidak meluber */
+    .search-card {
+        padding: 20px;
+        width: 90%;
+        border-radius: 15px;
+        margin-top: -150px; /* Sesuaikan animasi sembunyinya */
+    }
+
+    /* Kategori Produk (Terbaru, Terlaris): Buat ke tengah di layar kecil */
+    .nav-pills {
+        justify-content: center !important;
+        margin-top: 20px;
+    }
+
+    /* Teks Judul Section: Buat ke tengah */
+    .section-header {
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Mini Swiper (Tentang Kami): Sesuaikan lagi untuk HP */
+    .mini-swiper {
+        height: 200px;
+    }
+    .mini-swiper img {
+        height: 200px;
+    }
+    
+    /* Footer: Rapikan jarak antar kolom */
+    .footer-container {
+        gap: 20px;
+        text-align: center; /* Teks footer lebih bagus di tengah untuk HP */
+    }
+    .contact-item {
+        justify-content: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Untuk HP Layar Sangat Kecil (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Sesuaikan kotak gambar produk agar tidak terlalu kosong */
+    .product-img-container {
+        height: 200px; 
+    }
+    
+    .swiper {
+        height: 40vh;
+    }
+}
+
+/* ===============================
+   MOBILE NAVIGATION (SIDEBAR)
+   =============================== */
+
+/* Sembunyikan hamburger di layar komputer (desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Laci Menu Mobile */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Sembunyi jauh di luar layar kanan */
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 100000; /* Pastikan selalu di paling depan */
+    transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Class ini akan ditambahkan lewat JavaScript saat ikon diklik */
+.mobile-nav.active {
+    right: 0; 
+}
+
+#back {
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu-list li {
+    margin-bottom: 25px;
+}
+
+.mobile-menu-list li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+    display: block;
+}
+
+.mobile-menu-list li a:hover {
+    color: #F891B0; /* Warna pink brand kamu */
+    padding-left: 10px; /* Efek geser manis saat disentuh */
+}
+
+/* Munculkan Hamburger HANYA di HP */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Pastikan body tidak tertutup navbar yang fixed */
+body {
+    padding-top: 70px; 
+}
+
+/* Sembunyikan hamburger secara default */
+.hamburger { display: none; }
+
+/* Styling Laci Mobile */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Sembunyi di kanan */
+    width: 280px;
+    height: 100vh;
+    background: white;
+    z-index: 10001;
+    transition: 0.4s;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+    .ul-nav { display: none; } /* Sembunyikan menu teks */
+    .hamburger { display: block; } /* Munculkan hamburger */
+    
+    .swiper {
+        height: 50vh !important; /* Paksa tinggi hero agar muncul di HP */
+        margin-top: 0 !important;
+    }
+    
+    /* Pastikan section produk tidak hilang */
+    #Produk {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Mengatur navigasi utama */
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, Ikon di kanan */
+    padding: 0 5%; /* Beri jarak aman di sisi kiri dan kanan */
+    align-items: center;
+    height: 70px;
+}
+
+/* Mengatur wadah ikon di sebelah kanan */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Mengatur jarak dekat antara search dan hamburger */
+}
+
+/* Sembunyikan menu teks di HP */
+@media (max-width: 768px) {
+    .ul-nav {
+        display: none;
+    }
+    .hamburger {
+        display: block; /* Munculkan hamburger hanya di layar kecil */
+        cursor: pointer;
+    }
+}
+/* Mencegah SVG menghalangi klik pada tombol hamburger */
+.hamburger svg {
+    pointer-events: none;
 }

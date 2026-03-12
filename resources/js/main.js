@@ -101,4 +101,46 @@ const miniSwiper = new Swiper('.mini-swiper', {
 });
 // tentang end
 
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const searchBtn = document.getElementById('search-btn');
+    const searchOverlay = document.getElementById('search-overlay');
+    const closeSearch = document.getElementById('close-search');
 
+    // Hamburger Logic
+    if (hamburgerBtn && mobileNav) { // Tambahkan pengecekan mobileNav
+    hamburgerBtn.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+    });
+    }
+
+    // Search Logic
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+        });
+    }
+
+    if (closeSearch) {
+        closeSearch.addEventListener('click', () => {
+            searchOverlay.classList.remove('active');
+        });
+    }
+});
+
+// Fungsi global untuk tombol back/close di mobile nav
+window.closeMenu = function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) {
+        mobileNav.classList.remove('active');
+    }
+};
+
+// Fungsi global untuk membuka mobile nav
+window.openMenu = function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) {
+        mobileNav.classList.add('active');
+    }
+};
