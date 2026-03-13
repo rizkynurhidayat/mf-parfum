@@ -34,6 +34,12 @@ Route::middleware(['guest'])->group(function () {
     $information = \App\Models\Information::first(); 
     return view('services', compact('information'));})->name('services');
 
+Route::get('/ContactUs', function () {
+    // Ambil data info biar footer-nya gak kosong/error
+    $information = \App\Models\Information::first(); 
+    return view('contact', compact('information'));
+})->name('contact');
+
 });
 
 Route::middleware(['auth'])->group(function () {
