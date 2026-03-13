@@ -142,11 +142,10 @@
         </div>
     </div>
 
-    <footer id="Footer" class="custom-footer">
+<footer id="Footer" class="custom-footer">
     <div class="footer-container">
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
             <div class="footer-logo">
-                <img src="img/logo-mf.png" alt="MF Parfum Logo">
                 <h2>MF Parfum</h2>
             </div>
             <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
@@ -157,7 +156,7 @@
             </div>
         </div>
         
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
             <h4>Address</h4>
             <div class="contact-item">
                 <a href="{{ $information->location }}" target="_blank">
@@ -176,17 +175,17 @@
             </div>
         </div>
 
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.5s">
             <h4>Quick Links</h4>
             <ul class="footer-links">
                 <li><a href="{{ route('about') }}">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 <li><a href="{{ route('services') }}">Our Services</a></li>
                 <li><a href="{{ route('terms') }}">Terms & Condition</a></li>
             </ul>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom wow fadeIn" data-wow-delay="0.8s">
         <p>&copy; 2026 MF Parfum. All Rights Reserved.</p>
     </div>
 </footer>

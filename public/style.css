@@ -806,6 +806,12 @@ nav {
     font-size: 14px;
 }
 
+.fadeInUp {
+    animation-name: fadeInUp;
+    /* Mengatur agar mulai dari 40px di bawah */
+    transform: translateY(40px); 
+}
+
 /* Memperbaiki jarak Section Firm Visit (Background Hijau tadi) */
 .py-6 {
     padding-top: 6rem;

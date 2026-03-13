@@ -120,7 +120,7 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                    <h1 class="display-5 mb-3">Produk Kami</h1>
+                    <h1  class="display-5 mb-3 " >Produk Kami</h1>
                     <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
             </div>
@@ -147,7 +147,7 @@
         @foreach($products as $index => $product)
         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp {{ $index >= 8 ? 'extra-product d-none' : '' }}" data-wow-delay="0.1s">
             <div class="product-item">
-                <div class="product-img-container">
+                <div class="product-img-container ">
                     <img class="img-fluid" src="{{ asset('storage/'.$product->image) }}" alt="">
                     @if($product->created_at >= now()->subDays(1))
                 <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3" style="z-index: 10;">
@@ -190,7 +190,7 @@
     <div class="container">
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
-                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px; margin-bottom: 3rem;">
                     <h1 class="display-5 mb-3">Galeri</h1>
                     <!-- <p>Lihat koleksi foto eksklusif dari produk dan aktivitas kami sehari-hari.</p> -->
                 </div>
@@ -200,7 +200,7 @@
     </div>
 </div>
     
-<section class="mini-swiper-section" style="margin-top: -20px;">
+<section class="mini-swiper-section" style="margin-top: 30px;">
   <div class="swiper mini-swiper" id="swiperGallery">
     <div class="swiper-wrapper">
         @foreach($galleries as $gallery)
@@ -219,9 +219,8 @@
 
 <footer id="Footer" class="custom-footer">
     <div class="footer-container">
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
             <div class="footer-logo">
-                <img src="img/logo-mf.png" alt="MF Parfum Logo">
                 <h2>MF Parfum</h2>
             </div>
             <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
@@ -232,7 +231,7 @@
             </div>
         </div>
         
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
             <h4>Address</h4>
             <div class="contact-item">
                 <a href="{{ $information->location }}" target="_blank">
@@ -251,7 +250,7 @@
             </div>
         </div>
 
-        <div class="footer-col">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.5s">
             <h4>Quick Links</h4>
             <ul class="footer-links">
                 <li><a href="{{ route('about') }}">About Us</a></li>
@@ -261,7 +260,7 @@
             </ul>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom wow fadeIn" data-wow-delay="0.8s">
         <p>&copy; 2026 MF Parfum. All Rights Reserved.</p>
     </div>
 </footer>
@@ -309,6 +308,11 @@ document.getElementById("showMoreBtn").addEventListener("click", function() {
 document.addEventListener('DOMContentLoaded', function () {
     // 1. Inisialisasi Swiper Hero (Banner Atas)
     // Kita panggil spesifik lewat section #Beranda
+
+    if (typeof WOW !== 'undefined') {
+        new WOW().init();
+    }
+    
     const heroSwiper = new Swiper('#Beranda .swiper', {
         loop: true,
         autoplay: {

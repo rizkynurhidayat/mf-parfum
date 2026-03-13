@@ -135,55 +135,52 @@
     </div>
 
     <footer id="Footer" class="custom-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <img src="img/logo-mf.png" alt="MF Parfum Logo">
-                    <h2>MF Parfum</h2>
-                </div>
-                <p>Aroma elegan untuk setiap momen berharga Anda.</p>
-                <div class="social-links">
-                    <a href="{{ $information->twitter }}" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="{{ $information->tiktok }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="{{ $information->instagram }}" class="social-icon"><i class="fab fa-instagram"></i></a>
-                </div>
+    <div class="footer-container">
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
+            <div class="footer-logo">
+                <h2>MF Parfum</h2>
             </div>
-            
-            <div class="footer-col">
-                <h4>Address</h4>
-                <div class="contact-item">
+            <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
+            <div class="social-links">
+                <a href="{{ $information->twitter }}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="{{ $information->tiktok }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="{{ $information->instagram }}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
+            <h4>Address</h4>
+            <div class="contact-item">
                 <a href="{{ $information->location }}" target="_blank">
 
                     <i class="fa fa-map-marker-alt" style="color:white;"></i>
                     <span>123 Street, New York, USA</span>
                 </a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa fa-phone-alt"></i>
-                    <span href="{{ $information->phone}}">+012 345 67890</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa fa-envelope"></i>
-                    <span>{{ $information->email ?? 'info@example.com' }}</span>
-                </div>
             </div>
-
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <!-- <li><a href="{{ route('home') }}">Beranda</a></li> -->
-                    <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                    <li><a href="{{ route('services') }}">Our Services</a></li>
-                    <li><a href="{{ route('terms') }}">Terms & Condition</a></li>
-
-                </ul>
+            <div class="contact-item">
+                <i class="fa fa-phone-alt"></i>
+                <span>+012 345 67890</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <span>info@example.com</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 MF Parfum. All Rights Reserved.</p>
+
+        <div class="footer-col wow fadeInUp" data-wow-delay="0.5s">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="{{ route('about') }}">About Us</a></li>
+                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                <li><a href="{{ route('services') }}">Our Services</a></li>
+                <li><a href="{{ route('terms') }}">Terms & Condition</a></li>
+            </ul>
         </div>
-    </footer>
+    </div>
+    <div class="footer-bottom wow fadeIn" data-wow-delay="0.8s">
+        <p>&copy; 2026 MF Parfum. All Rights Reserved.</p>
+    </div>
+</footer>
 
     <script src="main.js"></script>
 
