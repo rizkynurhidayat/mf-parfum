@@ -22,14 +22,17 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/About', function () {
     // Ambil data info biar footer-nya gak kosong/error
     $information = \App\Models\Information::first(); 
-    return view('about', compact('information'));
-})->name('about');
+    return view('about', compact('information'));})->name('about');
 
     Route::get('/Terms&Condition', function () {
     // Ambil data info biar footer-nya gak kosong/error
     $information = \App\Models\Information::first(); 
-    return view('terms', compact('information'));
-})->name('terms');
+    return view('terms', compact('information'));})->name('terms');
+    
+    Route::get('/OurServices', function () {
+    // Ambil data info biar footer-nya gak kosong/error
+    $information = \App\Models\Information::first(); 
+    return view('services', compact('information'));})->name('services');
 
 });
 
