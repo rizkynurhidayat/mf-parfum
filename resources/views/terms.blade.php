@@ -53,7 +53,7 @@
             <li><a href="{{ url('/') }}#Beranda" onclick="closeMenu()">Beranda</a></li>
             <li><a href="{{ url('/') }}#Produk" onclick="closeMenu()">Produk</a></li>
             <li><a href="{{ url('/') }}#Tentang" onclick="closeMenu()">Galeri</a></li>
-            <li><a href="{{ url('/') }}#Mitra" onclick="closeMenu()">Mitra</a></li>
+            <li><a href="{{ url('/') }}#Footer" onclick="closeMenu()">Tentang</a></li>
         </ul>
     </div>
 
@@ -115,7 +115,7 @@
             </div>
         </div>
     </div>
-    <footer class="custom-footer">
+    <footer id="Footer" class="custom-footer">
         <div class="footer-container">
             <div class="footer-col">
                 <div class="footer-logo">

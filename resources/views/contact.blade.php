@@ -44,7 +44,7 @@
             <li><a href="{{ route('home') }}">Beranda</a></li>
             <li><a href="{{ route('home') }}#Produk">Produk</a></li>
             <li><a href="{{ route('home') }}#Tentang">Galeri</a></li>
-            <li><a href="{{ route('home') }}#Mitra">Mitra</a></li>
+            <li><a href="{{ route('home') }}#Footer">Tentang</a></li>
         </ul>
         <div class="nav-actions">
             <div class="search" id="search-btn">
@@ -92,7 +92,7 @@
         </div>
     </div>
 
-   <footer class="custom-footer">
+   <footer id="Footer" class="custom-footer">
         <div class="footer-container">
             <div class="footer-col">
                 <div class="footer-logo">

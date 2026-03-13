@@ -41,7 +41,7 @@
         <li><a href="#Beranda">Beranda</a></li>
         <li><a href="#Produk">Produk</a></li>
         <li><a href="#Tentang">Galeri</a></li>
-        <li><a href="#Mitra">Mitra</a></li>
+        <li><a href="#Footer">Tentang</a></li>
     </ul>
 
     <div class="nav-actions">
@@ -66,7 +66,7 @@
         <li><a href="#Beranda" onclick="closeMenu()">Beranda</a></li>
         <li><a href="#Produk" onclick="closeMenu()">Produk</a></li>
         <li><a href="#Tentang" onclick="closeMenu()">Galeri</a></li>
-        <li><a href="#Mitra" onclick="closeMenu()">Mitra</a></li>
+        <li><a href="#footer" onclick="closeMenu()">Tentang</a></li>
     </ul>
 </div>
 
@@ -217,7 +217,7 @@
 </section>
 <!-- tentang kami end -->
 
-<footer class="custom-footer">
+<footer id="Footer" class="custom-footer">
     <div class="footer-container">
         <div class="footer-col">
             <div class="footer-logo">

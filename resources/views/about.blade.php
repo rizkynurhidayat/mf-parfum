@@ -28,7 +28,7 @@
             <li><a href="{{ route('home') }}">Beranda</a></li>
             <li><a href="{{ route('home') }}#Produk">Produk</a></li>
             <li><a href="{{ route('home') }}#Tentang">Galeri</a></li>
-            <li><a href="{{ route('home') }}#Mitra">Mitra</a></li>
+            <li><a href="{{ route('home') }}#Footer">Tentang</a></li>
         </ul>
         <div class="nav-actions">
     <div class="search" id="search-btn">
@@ -53,7 +53,7 @@
         <li><a href="{{ route('home') }}#Beranda" onclick="closeMenu()">Beranda</a></li>
         <li><a href="{{ route('home') }}#Produk" onclick="closeMenu()">Produk</a></li>
         <li><a href="{{ route('home') }}#Tentang" onclick="closeMenu()">Galeri</a></li>
-        <li><a href="{{ route('home') }}#Mitra" onclick="closeMenu()">Mitra</a></li>
+        <li><a href="{{ route('home') }}#Footer" onclick="closeMenu()">Tentang</a></li>
     </ul>
 </div>
 
@@ -134,7 +134,7 @@
         </div>
     </div>
 
-    <footer class="custom-footer">
+    <footer id="Footer" class="custom-footer">
         <div class="footer-container">
             <div class="footer-col">
                 <div class="footer-logo">
@@ -160,7 +160,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fa fa-phone-alt"></i>
-                    <span>{{ $information->phone ?? '+012 345 67890' }}</span>
+                    <span href="{{ $information->phone}}">+012 345 67890</span>
                 </div>
                 <div class="contact-item">
                     <i class="fa fa-envelope"></i>
