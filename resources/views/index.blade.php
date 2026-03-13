@@ -257,7 +257,7 @@
                 <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">Terms & Condition</a></li>
+                <li><a href="{{ route('terms') }}">Terms & Condition</a></li>
             </ul>
         </div>
     </div>

@@ -19,11 +19,17 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', [HomeController::class, 'view'])->name('home');
     Route::get('/product/buy/{id}', [ProductController::class, 'trackClick'])->name('product.buy');
 
-    Route::get('/about', function () {
+    Route::get('/About', function () {
     // Ambil data info biar footer-nya gak kosong/error
     $information = \App\Models\Information::first(); 
     return view('about', compact('information'));
 })->name('about');
+
+    Route::get('/Terms&Condition', function () {
+    // Ambil data info biar footer-nya gak kosong/error
+    $information = \App\Models\Information::first(); 
+    return view('terms', compact('information'));
+})->name('terms');
 
 });
 

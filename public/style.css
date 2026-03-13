@@ -818,5 +818,48 @@ nav {
     /* Opsional: Tekstur halus */
 }
 
+/* ===============================
+   TERMS & CONDITION PAGE
+   =============================== */
+.tnc-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 50px 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+}
 
+.tnc-content h4 {
+    color: #C2185B; /* Warna Pink Tua Brand Anda */
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tnc-content p {
+    color: #555555;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Responsif untuk Layar HP */
+@media (max-width: 768px) {
+    .tnc-card {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+    
+    .tnc-content h4 {
+        font-size: 18px;
+    }
+    
+    .tnc-content p {
+        font-size: 14px;
+        text-align: left; /* Teks rata kiri lebih mudah dibaca di HP */
+    }
+}
 
