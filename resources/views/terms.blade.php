@@ -124,9 +124,9 @@
                 </div>
                 <p>Aroma elegan untuk setiap momen berharga Anda. Temukan jati dirimu melalui wewangian eksklusif kami.</p>
                 <div class="social-links">
-                    <a href="{{ $information->twitter ?? '#' }}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="{{ $information->tiktok ?? '#' }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="{{ $information->instagram ?? '#' }}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="{{ $information->twitter }}" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ $information->tiktok }}" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="{{ $information->instagram }}" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             
@@ -152,9 +152,9 @@
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="{{ route('terms') ?? '#' }}">Terms & Condition</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="{{ route('services') }}">Our Services</a></li>
+                    <li><a href="{{ route('terms') }}">Terms & Condition</a></li>
                 </ul>
             </div>
         </div>
